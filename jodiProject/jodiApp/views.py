@@ -36,8 +36,12 @@ def gameEntry(request):
     context = {
         "newGame": newGame
     }
-    return render(request, 'jodiApp/gamePage.html', context)
+    return render(request, 'jodiApp/gameEntry.html', context)
 
 
 def gameUser(request):
-    return render(request, 'jodiApp/gamePage.html')
+    newGame = GameModel.objects.filter(gameForeignKey=request.user)
+    context = {
+        "games": newGame
+    }
+    return render(request, 'jodiApp/gamePage.html', context)

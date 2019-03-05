@@ -17,9 +17,9 @@ Hi {{ user.username }}!
 {% endif %}
 <hr/>
 
-{% if newGame %}
+{% if games %}
 
-{% for eachItem in newGame %}
+{% for eachItem in games %}
 <h2>{{ eachItem.name }}</h2>
 <p>{{ eachItem.developer }}</p>
 <p>{{ eachItem.dateMade }}</p>
