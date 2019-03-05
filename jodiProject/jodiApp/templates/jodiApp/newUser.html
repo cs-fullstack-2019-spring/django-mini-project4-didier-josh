@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "jodiApp/index.html" %}
 
+{% block header %}
+<h3>NEW ACCOUNT</h3>
+{% endblock %}
+
+{% block content %}
 <form method="post">
     {% csrf_token %}
     {{ newLogin.as_p }}
     <button>Submit</button>
 </form>
-
-</body>
-</html>
+{% endblock %}
