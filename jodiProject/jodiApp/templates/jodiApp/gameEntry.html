@@ -1,13 +1,12 @@
 {% extends "jodiApp/index.html" %}
 
 {% block header %}
-<h2>NEW ACCOUNT</h2>
+<h2>NEW GAME</h2>
 {% endblock %}
 
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    {{ newLogin.as_p }}
-    <button>Submit</button>
+    {{ newGame.as_p }}
 </form>
 {% endblock %}
