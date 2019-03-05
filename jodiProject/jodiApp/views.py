@@ -25,7 +25,6 @@ def newUser(request):
     return render(request, 'jodiApp/newUser.html', context)
 
 
-
 def gameEntry(request):
     newGame = GameForm(request.POST or None)
     print(request.POST)
@@ -37,8 +36,12 @@ def gameEntry(request):
     context = {
         "newGame": newGame
     }
-    return render(request, 'jodiApp/gamePage.html', context)
+    return render(request, 'jodiApp/gameEntry.html', context)
+
 
 def gameUser(request):
-    return render(request, 'jodiApp/gamePage.html')
-
+    newGame = GameModel.objects.filter(gameForeignKey=request.user)
+    context = {
+        "games": newGame
+    }
+    return render(request, 'jodiApp/gamePage.html', context)
