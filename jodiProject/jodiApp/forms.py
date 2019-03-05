@@ -7,6 +7,13 @@ class UserLoginForm(forms.ModelForm):
         model = UserLoginModel
         exclude = ["dateAccountCreated", "userTableForeignKey"]
 
+    def clean_password(self):
+        password1Data = self.cleaned_data["password1"]
+        password2Data = self.cleaned_data["password2"]
+        if password1Data != password2Data:
+            raise forms.ValidationError("Does not Match")
+
+
 
 class GameForm(forms.ModelForm):
     class Meta:
