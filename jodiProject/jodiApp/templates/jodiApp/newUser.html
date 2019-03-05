@@ -6,9 +6,10 @@
 </head>
 <body>
 
-<form action="" method="post">
+<form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ newLogin.as_p }}
+    <button>Submit</button>
 </form>
 
 </body>
