@@ -25,7 +25,6 @@ def newUser(request):
     return render(request, 'jodiApp/newUser.html', context)
 
 
-
 def gameEntry(request):
     newGame = GameForm(request.POST or None)
     print(request.POST)
@@ -39,6 +38,6 @@ def gameEntry(request):
     }
     return render(request, 'jodiApp/gamePage.html', context)
 
+
 def gameUser(request):
     return render(request, 'jodiApp/gamePage.html')
-
