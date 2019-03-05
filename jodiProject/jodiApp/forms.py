@@ -14,7 +14,6 @@ class UserLoginForm(forms.ModelForm):
             raise forms.ValidationError("Does not Match")
 
 
-
 class GameForm(forms.ModelForm):
     class Meta:
         model = GameModel
@@ -24,7 +23,7 @@ class GameForm(forms.ModelForm):
         dateMadeData = self.cleaned_data["dateMade"]
 
         if dateMadeData == None:
-            raise forms.ValidationError("Input date")
+            raise forms.ValidationError("Must Enter Date")
 
     def clean_ageLimit(self):
         ageLimitData = self.clean_ageLimit["ageLimit"]
