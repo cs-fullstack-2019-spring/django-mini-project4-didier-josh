@@ -1,9 +1,34 @@
-{% extends "jodiApp/index.html" %}
+{% extends 'jodiApp/index.html' %}
 
+
+<h2>
 {% block header %}
-<h3>YOUR GAME'S COLLECTION</h3>
-{% endblock %}
-
+Hi, {{ user.username }}, this your game page!
+{% endblock header %}
+</h2>
 {% block content %}
+
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+<p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">login</a>
+{% endif %}
+<hr/>
+
+{% if newGame %}
+
+{% for eachItem in newGame %}
+<h2>{{ eachItem.name }}</h2>
+<p>{{ eachItem.developer }}</p>
+<p>{{ eachItem.dateMade }}</p>
+
+
+{% endfor %}
+
+{% else %}
+<p>No Games.</p>
+{% endif %}
 
 {% endblock %}
