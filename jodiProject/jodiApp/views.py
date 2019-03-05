@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .forms import UserLoginForm, UserLoginModel, GameForm, GameModel
 from django.contrib.auth.models import User
@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
-    return render(request, 'jodiApp/index.html')
+    addGame = GameModel.objects.all()
+    return render(request, 'jodiApp/index.html', {'addGame': addGame})
 
 
 def newUser(request):
@@ -32,11 +33,7 @@ def gameEntry(request):
         print("save")
         newGame.save()
         return redirect('index')
-
-    context = {
-        "newGame": newGame
-    }
-    return render(request, 'jodiApp/gameEntry.html', context)
+    return render(request, 'jodiApp/gameEntry.html', {"newGame": newGame})
 
 
 def gameUser(request):
@@ -45,3 +42,12 @@ def gameUser(request):
         "games": newGame
     }
     return render(request, 'jodiApp/gamePage.html', context)
+
+
+def delete(request, ID):
+    deleted_game = get_object_or_404(GameModel, pk=ID)
+    if request.method == 'POST':
+        deleted_game.delete()
+        return redirect('index')
+
+    return render(request, 'jodiApp/delete.html', {"deleted_game": deleted_game})

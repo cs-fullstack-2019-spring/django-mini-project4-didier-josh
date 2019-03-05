@@ -28,6 +28,11 @@
     <a href="{% url 'newUser' %}">New Account</a>
     <hr>
     {% endblock %}
+    {% for eachOption in addGame %}
+    {{ eachOption.name }}<br>
+    <a href="{% url 'delete' eachOption.id %}">Delete</a>
+
+    {% endfor %}
 </div>
 
 

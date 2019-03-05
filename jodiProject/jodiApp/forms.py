@@ -31,7 +31,7 @@ class GameForm(forms.ModelForm):
         return dateMadeData
 
     def clean_ageLimit(self):
-        ageLimitData = self.clean_ageLimit["ageLimit"]
+        ageLimitData = self.cleaned_data["ageLimit"]
 
         if ageLimitData < 10:
             raise forms.ValidationError("You're too young for this game!")
