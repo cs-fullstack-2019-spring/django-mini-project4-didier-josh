@@ -20,3 +20,7 @@ def newUser(request):
     }
 
     return render(request, 'jodiApp/newUser.html', context)
+
+
+def gameUser(request):
+    return render(request, 'jodiApp/gamePage.html')
