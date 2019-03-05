@@ -9,22 +9,30 @@
 <div>
     <h1>
         {% block header %}
+        {% if user.is_authenticated %}
+        Hi {{ user.username }}, good to see you (^_^)_/ !!!!
+        {% else %}
         WELCOME TO THE GAME DIRECTORY
+        {% endif %}
         {% endblock %}
     </h1>
     {% block content %}
     {% if user.is_authenticated %}
-    Hi {{ user.username }}!
     <p><a href="{% url 'logout' %}">logout</a></p>
     <a href="{% url 'gameEntry' %}">Add Game</a>
     {% else %}
     <p>You are not logged in</p>
     <a href="{% url 'login' %}">login</a>
     {% endif %}
-    <hr/>
+    <hr>
     <a href="{% url 'newUser' %}">New Account</a>
     <hr>
     {% endblock %}
+    {% for eachOption in addGame %}
+    {{ eachOption.name }}<br>
+    <a href="{% url 'delete' eachOption.id %}">Delete</a>
+
+    {% endfor %}
 </div>
 
 

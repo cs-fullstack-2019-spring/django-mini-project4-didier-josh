@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .forms import UserLoginForm, UserLoginModel, GameForm, GameModel
 from django.contrib.auth.models import User
@@ -6,9 +6,10 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
-    return render(request, 'jodiApp/index.html')
+    addGame = GameModel.objects.all()
+    return render(request, 'jodiApp/index.html', {'addGame': addGame})
 
-
+#lets a user create a new account
 def newUser(request):
     newLogin = UserLoginForm(request.POST or None)
     print(request.POST)
@@ -24,7 +25,7 @@ def newUser(request):
 
     return render(request, 'jodiApp/newUser.html', context)
 
-
+#allows a game to be entered
 def gameEntry(request):
     newGame = GameForm(request.POST or None)
     print(request.POST)
@@ -32,14 +33,19 @@ def gameEntry(request):
         print("save")
         newGame.save()
         return redirect('index')
+    return render(request, 'jodiApp/gameEntry.html', {"newGame": newGame})
 
-    context = {
-        "newGame": newGame
-    }
-    return render(request, 'jodiApp/gameEntry.html', context)
-
-
+#list games
 def gameUser(request):
     newGame = GameModel.objects.filter(gameForeignKey=request.user)
     context = dict(games=newGame)
     return render(request, 'jodiApp/gamePage.html', context)
+
+#delete game
+def delete(request, ID):
+    deleted_game = get_object_or_404(GameModel, pk=ID)
+    if request.method == 'POST':
+        deleted_game.delete()
+        return redirect('index')
+
+    return render(request, 'jodiApp/delete.html', {"deleted_game": deleted_game})

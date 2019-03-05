@@ -9,5 +9,6 @@
     {% csrf_token %}
     {{ newLogin.as_p }}
     <button>Submit</button>
-</form>
+</form><br>
+<a href="{% url 'index' %}">Home</a>
 {% endblock %}
