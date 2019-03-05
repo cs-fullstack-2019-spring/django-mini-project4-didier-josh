@@ -10,7 +10,7 @@ def index(request):
 
 def newUser(request):
     newLogin = UserLoginForm(request.POST or None)
-    print (request.POST)
+    print(request.POST)
     if newLogin.is_valid():
         print("save")
         newLogin.save()
@@ -20,4 +20,3 @@ def newUser(request):
     }
 
     return render(request, 'jodiApp/newUser.html', context)
-
