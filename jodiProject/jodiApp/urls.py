@@ -5,7 +5,7 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('newUser/', views.newUser, name="newUser"),
     path('gamePage/', views.gameUser, name="gamePage"),
-    path('gameEntry/', views.gameEntry, name="gameEntry"),
+    path('gameEntry/<int:id>', views.gameEntry, name="gameEntry"),
 ]
 
 urlpatterns += [
