@@ -7,7 +7,7 @@ class UserLoginModel(models.Model):
     username = models.CharField(max_length=20)
     password1 = models.CharField(max_length=200)
     password2 = models.CharField(max_length=200)
-    dateAccountCreated = models.DateField(default="")
+    dateAccountCreated = models.DateField()
     rank = models.CharField(max_length=200, default="grunt")
     userTableForeignKey = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
