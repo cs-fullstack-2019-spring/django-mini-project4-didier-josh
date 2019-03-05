@@ -33,8 +33,12 @@
               <caret line="7" selection-start-line="7" selection-end-line="7" />
 =======
             <state relative-caret-position="45">
+<<<<<<< HEAD
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+=======
               <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
 >>>>>>> b2bb3277419a8426f22aad3af20b934d81273e46
+>>>>>>> ecf22f0b5622385901d364dd18757ea02ca86a3f
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -87,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/jodiProject/jodiApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -99,16 +103,25 @@
         <entry file="file://$PROJECT_DIR$/jodiProject/jodiApp/templates/jodiApp/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jodiProject/jodiApp/templates/registration/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-225">
+              <caret column="34" selection-start-column="34" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jodiProject/jodiApp/templates/registration/login.html">
+        <entry file="file://$PROJECT_DIR$/jodiProject/jodiProject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="353">
+              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
             </state>
           </provider>
         </entry>
@@ -129,7 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/jodiProject/jodiProject/settings.py" />
         <option value="$PROJECT_DIR$/jodiProject/jodiProject/urls.py" />
         <option value="$PROJECT_DIR$/jodiProject/jodiApp/urls.py" />
         <option value="$PROJECT_DIR$/jodiProject/jodiApp/models.py" />
@@ -137,6 +149,7 @@
         <option value="$PROJECT_DIR$/jodiProject/jodiApp/views.py" />
         <option value="$PROJECT_DIR$/jodiProject/jodiApp/templates/jodiApp/index.html" />
         <option value="$PROJECT_DIR$/jodiProject/jodiApp/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/jodiProject/jodiProject/settings.py" />
       </list>
     </option>
   </component>
@@ -246,12 +259,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126000" />
+    <option name="totallyTimeSpent" value="602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1600" height="824" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25353926" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25353926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -265,7 +278,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33093524" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33093524" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -288,13 +301,6 @@
           <folding>
             <element signature="e#635#667#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jodiProject/jodiProject/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -337,8 +343,12 @@
 <<<<<<< HEAD
           <caret line="7" selection-start-line="7" selection-end-line="7" />
 =======
+<<<<<<< HEAD
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+=======
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
 >>>>>>> b2bb3277419a8426f22aad3af20b934d81273e46
+>>>>>>> ecf22f0b5622385901d364dd18757ea02ca86a3f
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -369,15 +379,27 @@
           </folding>
 =======
         <state relative-caret-position="105">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jodiProject/jodiApp/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-225">
+          <caret column="34" selection-start-column="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jodiProject/jodiProject/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+=======
         <state relative-caret-position="60">
           <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
 >>>>>>> b2bb3277419a8426f22aad3af20b934d81273e46
+>>>>>>> ecf22f0b5622385901d364dd18757ea02ca86a3f
         </state>
       </provider>
     </entry>
@@ -410,7 +432,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Python 2.7 interpreter library</last-edited>
+          <last-edited>Python 3.6 interpreter library</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
