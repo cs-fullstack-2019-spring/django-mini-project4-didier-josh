@@ -15,6 +15,7 @@ def newUser(request):
         print("save")
         newLogin.save()
         return redirect('index')
+
     context = {
         "newLogin": newLogin
     }
