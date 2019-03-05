@@ -21,3 +21,17 @@ def newUser(request):
     }
 
     return render(request, 'jodiApp/newUser.html', context)
+
+
+def gameEntry(request):
+    newGame = GameForm(request.POST or None)
+    print(request.POST)
+    if newGame.is_valid():
+        print("save")
+        newGame.save()
+        return redirect('index')
+
+    context = {
+        "newGame": newGame
+    }
+    return render(request, 'jodiApp/gamePage.html', context)

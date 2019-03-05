@@ -2,15 +2,18 @@ from django import forms
 from .models import UserLoginModel, GameModel
 
 
+
 class UserLoginForm(forms.ModelForm):
     class Meta:
         model = UserLoginModel
         exclude = ["dateAccountCreated", "userTableForeignKey"]
 
-    def clean_password(self):
+    def clean_password2(self):
         password1Data = self.cleaned_data.get("password1")
         password2Data = self.cleaned_data.get("password2")
-        if password1Data is not password2Data:
+        print(password2Data)
+        print(password1Data)
+        if str(password1Data) != str(password2Data):
             raise forms.ValidationError("Does not Match")
         return password1Data
 
