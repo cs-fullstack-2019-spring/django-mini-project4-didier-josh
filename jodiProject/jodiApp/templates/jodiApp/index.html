@@ -5,7 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-<h1>WELCOME TO THE GAME DIRECTORY</h1>
+
+<div>
+    <h1>
+        {% block header %}
+        WELCOME TO THE GAME DIRECTORY
+        {% endblock %}
+    </h1>
+    {% block content %}
+    {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p><a href="{% url 'logout' %}">logout</a></p>
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a>
+    {% endif %}
+    <hr/>
+    {% endblock %}
+</div>
+
 
 </body>
 </html>
