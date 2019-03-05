@@ -9,12 +9,15 @@
 <div>
     <h1>
         {% block header %}
+        {% if user.is_authenticated %}
+        Hi {{ user.username }}, good to see you (^_^)_/ !!!!
+        {% else %}
         WELCOME TO THE GAME DIRECTORY
+        {% endif %}
         {% endblock %}
     </h1>
     {% block content %}
     {% if user.is_authenticated %}
-    Hi {{ user.username }}!
     <p><a href="{% url 'logout' %}">logout</a></p>
     <a href="{% url 'gameEntry' %}">Add Game</a>
     {% else %}
