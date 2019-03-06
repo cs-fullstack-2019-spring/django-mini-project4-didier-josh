@@ -38,7 +38,9 @@ def gameEntry(request):
 #list games
 def gameUser(request):
     newGame = GameModel.objects.filter(gameForeignKey=request.user)
-    context = dict(games=newGame)
+    context = {
+        "games": newGame
+    }
     return render(request, 'jodiApp/gamePage.html', context)
 
 #delete game
