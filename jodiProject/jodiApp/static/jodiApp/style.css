@@ -1,0 +1,12 @@
+body{
+    background-color: darkslategray;
+    margin: 0px auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: lightblue;
+}

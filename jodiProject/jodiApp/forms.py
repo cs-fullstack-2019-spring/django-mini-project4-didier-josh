@@ -23,6 +23,8 @@ class GameForm(forms.ModelForm):
         model = GameModel
         exclude = ["gameForeignkey"]
 
+
+
     def clean_dateMade(self):
         dateMadeData = self.cleaned_data["dateMade"]
 

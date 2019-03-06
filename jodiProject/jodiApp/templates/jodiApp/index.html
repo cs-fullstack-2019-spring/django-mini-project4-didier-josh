@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jodiApp/style.css' %}">
+
 </head>
 <body>
 
@@ -19,19 +22,21 @@
     {% block content %}
     {% if user.is_authenticated %}
     <p><a href="{% url 'logout' %}">logout</a></p>
-    <a href="{% url 'gameEntry' %}">Add Game</a><br>
-    {% for eachOption in addGame %}
-    {{ eachOption.name }}
-    <a href="{% url '' %}">Edit</a>
-    <a href="{% url 'delete' eachOption.id %}">Delete</a>
-    {% endfor %}
     {% else %}
     <p>Log in or create a new account</p>
-    <a href="{% url 'login' %}">login</a>
+    <p><a href="{% url 'login' %}">login</a></p>
+    <p><a href="{% url 'newUser' %}">New Account</a></p>
     {% endif %}
+    {% if user.is_authenticated %}
+    <p><a href="{% url 'gameEntry' %}">Add Game</a></p><br>
     <hr>
-    <a href="{% url 'newUser' %}">New Account</a>
+    {% for eachOption in addGame %}
+    <p>{{ eachOption.name }}</p>
+    <a href="{% url 'edit' eachOption.id %}">Edit</a>
+    <a href="{% url 'delete' eachOption.id %}">Delete</a>
     <hr>
+    {% endfor %}
+    {% endif %}
     {% endblock %}
 </div>
 

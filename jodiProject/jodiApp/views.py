@@ -6,8 +6,12 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
-    addGame = GameModel.objects.all()
-    return render(request, 'jodiApp/index.html', {'addGame': addGame})
+    if request.user.is_authenticated:
+        userLog = UserLoginModel.objects.get(username=request.user)
+        addGame = GameModel.objects.filter(gameForeignkey=userLog)
+        return render(request, 'jodiApp/index.html', {'addGame': addGame})
+    else:
+        return render(request, 'jodiApp/index.html')
 
 
 # lets a user create a new account
@@ -33,7 +37,10 @@ def gameEntry(request):
     print(request.POST)
     if newGame.is_valid():
         print("save")
-        newGame.save()
+        userLog = UserLoginModel.objects.get(username=request.user)
+        GameModel.objects.create(name=request.POST["name"], developer=request.POST["developer"],
+                                 dateMade=request.POST["dateMade"], ageLimit=request.POST["ageLimit"],
+                                 gameForeignkey=userLog)
         return redirect('index')
     return render(request, 'jodiApp/gameEntry.html', {"newGame": newGame})
 

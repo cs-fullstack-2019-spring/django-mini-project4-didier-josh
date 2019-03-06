@@ -20,7 +20,7 @@ class GameModel(models.Model):
     developer = models.CharField(max_length=20)
     dateMade = models.DateField(default="")
     ageLimit = models.IntegerField()
-    gameForeignkey = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    gameForeignkey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.name
