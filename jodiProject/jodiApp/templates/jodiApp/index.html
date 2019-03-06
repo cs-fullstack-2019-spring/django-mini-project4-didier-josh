@@ -19,19 +19,19 @@
     {% block content %}
     {% if user.is_authenticated %}
     <p><a href="{% url 'logout' %}">logout</a></p>
-    <a href="{% url 'gameEntry' %}">Add Game</a><br>
-    {% for eachOption in addGame %}
-    {{ eachOption.name }}
-    <a href="{% url 'edit' eachOption.id %}">Edit</a>
-    <a href="{% url 'delete' eachOption.id %}">Delete</a>
-    {% endfor %}
+    <p><a href="{% url 'gameEntry' %}">Add Game</a></p><br>
     {% else %}
     <p>Log in or create a new account</p>
-    <a href="{% url 'login' %}">login</a>
+    <p><a href="{% url 'login' %}">login</a></p>
     {% endif %}
+    <p><a href="{% url 'newUser' %}">New Account</a></p>
     <hr>
-    <a href="{% url 'newUser' %}">New Account</a>
+    {% for eachOption in addGame %}
+    <p>{{ eachOption.name }}</p>
+    <a href="{% url 'edit' eachOption.id %}">Edit</a>
+    <a href="{% url 'delete' eachOption.id %}">Delete</a>
     <hr>
+    {% endfor %}
     {% endblock %}
 </div>
 

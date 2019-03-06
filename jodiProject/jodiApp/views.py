@@ -41,6 +41,7 @@ def gameEntry(request):
 # list games
 def gamePage(request):
     newGame = GameModel.objects.filter(gameForeignKey=request.user)
+    # collector = CollectorModel.objects.get(username=request.user)
     context = {
         "games": newGame
     }
@@ -54,7 +55,7 @@ def edit(request, ID):
         gameToEdit.save()
         return redirect('index')
 
-    return render(request, 'jodiApp/.html', {'newGame': gameToEdit})
+    return render(request, 'jodiApp/gameEntry.html', {'newGame': gameToEdit})
 
 
 # delete game
