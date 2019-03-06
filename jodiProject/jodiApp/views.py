@@ -36,12 +36,22 @@ def gameEntry(request):
     return render(request, 'jodiApp/gameEntry.html', {"newGame": newGame})
 
 
-def gameUser(request):
+def gamePage(request):
     newGame = GameModel.objects.filter(gameForeignKey=request.user)
     context = {
         "games": newGame
     }
     return render(request, 'jodiApp/gamePage.html', context)
+
+
+def edit(request, ID):
+    edit_game = get_object_or_404(GameModel, pk=ID)
+    gameToEdit = GameForm(request.POST or None, instance=edit_game)
+    if gameToEdit.is_valid():
+        gameToEdit.save()
+        return redirect('index')
+
+    return render(request, 'jodiApp/.html', {'newGame': gameToEdit})
 
 
 def delete(request, ID):
