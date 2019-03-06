@@ -22,7 +22,7 @@
     <a href="{% url 'gameEntry' %}">Add Game</a><br>
     {% for eachOption in addGame %}
     {{ eachOption.name }}
-    <a href="{% url 'edit' eachOption.id %}">Edit</a>
+    <a href="{% url '' %}">Edit</a>
     <a href="{% url 'delete' eachOption.id %}">Delete</a>
     {% endfor %}
     {% else %}
