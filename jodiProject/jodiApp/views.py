@@ -9,7 +9,8 @@ def index(request):
     addGame = GameModel.objects.all()
     return render(request, 'jodiApp/index.html', {'addGame': addGame})
 
-#lets a user create a new account
+
+# lets a user create a new account
 def newUser(request):
     newLogin = UserLoginForm(request.POST or None)
     print(request.POST)
@@ -25,7 +26,8 @@ def newUser(request):
 
     return render(request, 'jodiApp/newUser.html', context)
 
-#allows a game to be entered
+
+# allows a game to be entered
 def gameEntry(request):
     newGame = GameForm(request.POST or None)
     print(request.POST)
@@ -35,15 +37,27 @@ def gameEntry(request):
         return redirect('index')
     return render(request, 'jodiApp/gameEntry.html', {"newGame": newGame})
 
-#list games
-def gameUser(request):
+
+# list games
+def gamePage(request):
     newGame = GameModel.objects.filter(gameForeignKey=request.user)
     context = {
         "games": newGame
     }
     return render(request, 'jodiApp/gamePage.html', context)
 
-#delete game
+
+def edit(request, ID):
+    edit_game = get_object_or_404(GameModel, pk=ID)
+    gameToEdit = GameForm(request.POST or None, instance=edit_game)
+    if gameToEdit.is_valid():
+        gameToEdit.save()
+        return redirect('index')
+
+    return render(request, 'jodiApp/.html', {'newGame': gameToEdit})
+
+
+# delete game
 def delete(request, ID):
     deleted_game = get_object_or_404(GameModel, pk=ID)
     if request.method == 'POST':
